@@ -1,5 +1,5 @@
 //
-//  ForecastsViewModel.swift
+//  ForecastViewModel.swift
 //  roomvu-challenge-task
 //
 //  Created by Mohammad Sadegh Panadgoo on 8/20/1402 AP.
@@ -8,19 +8,19 @@
 import Foundation
 import Combine
 
-class ForecastsViewModel: ObservableObject {
-    @Published var forecasts: [Forecast] = []
+class ForecastViewModel: ObservableObject {
+    @Published var Forecast: [Forecast] = []
     @Published var error: Error?
     
-    private let forecastsAPI: ForecastsAPIServices
+    private let ForecastAPI: ForecastAPIServices
     private var cancellables = Set<AnyCancellable>()
     
-    init(forecastsAPI: ForecastsAPIServices = ForecastsAPIImp()) {
-        self.forecastsAPI = forecastsAPI
+    init(ForecastAPI: ForecastAPIServices = ForecastAPIImp()) {
+        self.ForecastAPI = ForecastAPI
     }
     
-    func fetchForecasts(latitude: Double, longitude: Double) {
-        forecastsAPI.fetchForecastsData(longitude: longitude, latitude: latitude)
+    func fetchForecast(latitude: Double, longitude: Double) {
+        ForecastAPI.fetchForecastData(longitude: longitude, latitude: latitude)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
@@ -29,8 +29,8 @@ class ForecastsViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { forecasts in
-                self.forecasts = forecasts
+            } receiveValue: { Forecast in
+                self.Forecast = Forecast
             }
             .store(in: &cancellables)
     }

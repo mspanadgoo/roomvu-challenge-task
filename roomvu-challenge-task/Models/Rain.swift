@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Rain: Codable {
+    let oneHour, treeHours: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case oneHour = "1h"
+        case treeHours = "3h"
+    }
+}

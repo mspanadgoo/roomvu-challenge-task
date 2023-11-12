@@ -12,14 +12,14 @@ struct ForecastRow: View {
     
     var body: some View {
         HStack {
-            Text(formatDate(forecast.dt))
+            Text(formatDate(forecast.dt ?? 0))
             Spacer()
-            Image(systemName: forecast.weather.first?.icon ?? "")
-            Text("\(forecast.main.temp)°C")
-            Text("\(forecast.clouds.all)%")
-            Text("\(forecast.wind.speed)m/s")
-            Text("\(forecast.visibility)m")
-            Text("\(forecast.pop)%")
+            Image(systemName: forecast.weather?.first?.icon ?? "")
+            Text("\(forecast.main?.temp ?? 0)°C")
+            Text("\(forecast.clouds?.all ?? 0)%")
+            Text("\(forecast.wind?.speed ?? 0)m/s")
+            Text("\(forecast.visibility ?? 0)m")
+            Text("\(forecast.pop ?? 0)%")
         }
     }
     

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Sys: Codable {
+    let type: Int?
+    let id: Int?
+    let country: String?
+    let sunrise: TimeInterval?
+    let sunset: TimeInterval?
+    let pod: String?
+}

@@ -6,3 +6,32 @@
 //
 
 import Foundation
+import Combine
+
+class LocationViewModel: ObservableObject {
+    @Published var location: Location?
+    @Published var error: Error?
+    
+    private let geocodingAPI: GeocodingAPIServices
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(geocodingAPI: GeocodingAPIServices = GeocodingAPIImp()) {
+        self.geocodingAPI = geocodingAPI
+    }
+    
+    func fetchLocation(searchQuery: String) {
+        geocodingAPI.fetchLocationData(searchQuery: searchQuery)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    self.error = error
+                case .finished:
+                    break
+                }
+            } receiveValue: { geocodedLocation in
+                self.location = Location(geocodedLocation: geocodedLocation)
+            }
+            .store(in: &cancellables)
+    }
+}
