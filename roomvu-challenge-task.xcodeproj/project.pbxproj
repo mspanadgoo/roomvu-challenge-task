@@ -11,10 +11,18 @@
 		9D1C61362B02530F007BB7C7 /* Next5DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61352B02530F007BB7C7 /* Next5DaysView.swift */; };
 		9D1C61382B02566A007BB7C7 /* TodayEveryThreeHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61372B02566A007BB7C7 /* TodayEveryThreeHoursView.swift */; };
 		9D1C613B2B0264B0007BB7C7 /* IdentifiableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C613A2B0264B0007BB7C7 /* IdentifiableError.swift */; };
+		9D1C613D2B026F62007BB7C7 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C613C2B026F62007BB7C7 /* WeatherAPITests.swift */; };
+		9D1C613F2B026FA3007BB7C7 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C613E2B026FA3007BB7C7 /* WeatherViewModelTests.swift */; };
+		9D1C61412B0270D9007BB7C7 /* ForecastAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61402B0270D9007BB7C7 /* ForecastAPITests.swift */; };
+		9D1C61432B0270F2007BB7C7 /* ForecastViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61422B0270F2007BB7C7 /* ForecastViewModelTests.swift */; };
+		9D1C61452B0271AC007BB7C7 /* GeocodingAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61442B0271AC007BB7C7 /* GeocodingAPITests.swift */; };
+		9D1C61472B0271D3007BB7C7 /* LocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61462B0271D3007BB7C7 /* LocationViewModelTests.swift */; };
+		9D1C61492B027267007BB7C7 /* WeatherResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61482B027267007BB7C7 /* WeatherResponseTests.swift */; };
+		9D1C614B2B027374007BB7C7 /* ForecastResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C614A2B027374007BB7C7 /* ForecastResponseTests.swift */; };
+		9D1C614D2B0273F4007BB7C7 /* GeocodedLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C614C2B0273F4007BB7C7 /* GeocodedLocationTests.swift */; };
 		9D7A21A12AFF356E007966A0 /* roomvu_challenge_taskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7A21A02AFF356E007966A0 /* roomvu_challenge_taskApp.swift */; };
 		9D7A21A52AFF356F007966A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7A21A42AFF356F007966A0 /* Assets.xcassets */; };
 		9D7A21A92AFF356F007966A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7A21A82AFF356F007966A0 /* Preview Assets.xcassets */; };
-		9D7A21B32AFF3570007966A0 /* roomvu_challenge_taskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7A21B22AFF3570007966A0 /* roomvu_challenge_taskTests.swift */; };
 		9D7A21CD2AFF3761007966A0 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7A21CC2AFF3761007966A0 /* Weather.swift */; };
 		9D7A21CF2AFF376C007966A0 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7A21CE2AFF376C007966A0 /* Forecast.swift */; };
 		9D7A21D22AFF37C8007966A0 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7A21D12AFF37C8007966A0 /* WeatherAPI.swift */; };
@@ -57,13 +65,6 @@
 			remoteGlobalIDString = 9D7A219C2AFF356E007966A0;
 			remoteInfo = "roomvu-challenge-task";
 		};
-		9D7A21B92AFF3570007966A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D7A21952AFF356D007966A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D7A219C2AFF356E007966A0;
-			remoteInfo = "roomvu-challenge-task";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -72,14 +73,21 @@
 		9D1C61372B02566A007BB7C7 /* TodayEveryThreeHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayEveryThreeHoursView.swift; sourceTree = "<group>"; };
 		9D1C61392B026159007BB7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9D1C613A2B0264B0007BB7C7 /* IdentifiableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableError.swift; sourceTree = "<group>"; };
+		9D1C613C2B026F62007BB7C7 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
+		9D1C613E2B026FA3007BB7C7 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
+		9D1C61402B0270D9007BB7C7 /* ForecastAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastAPITests.swift; sourceTree = "<group>"; };
+		9D1C61422B0270F2007BB7C7 /* ForecastViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModelTests.swift; sourceTree = "<group>"; };
+		9D1C61442B0271AC007BB7C7 /* GeocodingAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingAPITests.swift; sourceTree = "<group>"; };
+		9D1C61462B0271D3007BB7C7 /* LocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModelTests.swift; sourceTree = "<group>"; };
+		9D1C61482B027267007BB7C7 /* WeatherResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseTests.swift; sourceTree = "<group>"; };
+		9D1C614A2B027374007BB7C7 /* ForecastResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponseTests.swift; sourceTree = "<group>"; };
+		9D1C614C2B0273F4007BB7C7 /* GeocodedLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodedLocationTests.swift; sourceTree = "<group>"; };
 		9D7A219D2AFF356E007966A0 /* roomvu-challenge-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "roomvu-challenge-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7A21A02AFF356E007966A0 /* roomvu_challenge_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomvu_challenge_taskApp.swift; sourceTree = "<group>"; };
 		9D7A21A42AFF356F007966A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D7A21A62AFF356F007966A0 /* roomvu_challenge_task.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = roomvu_challenge_task.entitlements; sourceTree = "<group>"; };
 		9D7A21A82AFF356F007966A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D7A21AE2AFF3570007966A0 /* roomvu-challenge-taskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "roomvu-challenge-taskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D7A21B22AFF3570007966A0 /* roomvu_challenge_taskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomvu_challenge_taskTests.swift; sourceTree = "<group>"; };
-		9D7A21B82AFF3570007966A0 /* roomvu-challenge-taskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "roomvu-challenge-taskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7A21CC2AFF3761007966A0 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		9D7A21CE2AFF376C007966A0 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		9D7A21D12AFF37C8007966A0 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
@@ -129,13 +137,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D7A21B52AFF3570007966A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -153,7 +154,6 @@
 			children = (
 				9D7A219D2AFF356E007966A0 /* roomvu-challenge-task.app */,
 				9D7A21AE2AFF3570007966A0 /* roomvu-challenge-taskTests.xctest */,
-				9D7A21B82AFF3570007966A0 /* roomvu-challenge-taskUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,7 +187,15 @@
 		9D7A21B12AFF3570007966A0 /* roomvu-challenge-taskTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D7A21B22AFF3570007966A0 /* roomvu_challenge_taskTests.swift */,
+				9D1C613C2B026F62007BB7C7 /* WeatherAPITests.swift */,
+				9D1C613E2B026FA3007BB7C7 /* WeatherViewModelTests.swift */,
+				9D1C61402B0270D9007BB7C7 /* ForecastAPITests.swift */,
+				9D1C61422B0270F2007BB7C7 /* ForecastViewModelTests.swift */,
+				9D1C61442B0271AC007BB7C7 /* GeocodingAPITests.swift */,
+				9D1C61462B0271D3007BB7C7 /* LocationViewModelTests.swift */,
+				9D1C61482B027267007BB7C7 /* WeatherResponseTests.swift */,
+				9D1C614A2B027374007BB7C7 /* ForecastResponseTests.swift */,
+				9D1C614C2B0273F4007BB7C7 /* GeocodedLocationTests.swift */,
 			);
 			path = "roomvu-challenge-taskTests";
 			sourceTree = "<group>";
@@ -308,24 +316,6 @@
 			productReference = 9D7A21AE2AFF3570007966A0 /* roomvu-challenge-taskTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9D7A21B72AFF3570007966A0 /* roomvu-challenge-taskUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D7A21C82AFF3570007966A0 /* Build configuration list for PBXNativeTarget "roomvu-challenge-taskUITests" */;
-			buildPhases = (
-				9D7A21B42AFF3570007966A0 /* Sources */,
-				9D7A21B52AFF3570007966A0 /* Frameworks */,
-				9D7A21B62AFF3570007966A0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9D7A21BA2AFF3570007966A0 /* PBXTargetDependency */,
-			);
-			name = "roomvu-challenge-taskUITests";
-			productName = "roomvu-challenge-taskUITests";
-			productReference = 9D7A21B82AFF3570007966A0 /* roomvu-challenge-taskUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -340,10 +330,6 @@
 						CreatedOnToolsVersion = 15.0.1;
 					};
 					9D7A21AD2AFF3570007966A0 = {
-						CreatedOnToolsVersion = 15.0.1;
-						TestTargetID = 9D7A219C2AFF356E007966A0;
-					};
-					9D7A21B72AFF3570007966A0 = {
 						CreatedOnToolsVersion = 15.0.1;
 						TestTargetID = 9D7A219C2AFF356E007966A0;
 					};
@@ -364,7 +350,6 @@
 			targets = (
 				9D7A219C2AFF356E007966A0 /* roomvu-challenge-task */,
 				9D7A21AD2AFF3570007966A0 /* roomvu-challenge-taskTests */,
-				9D7A21B72AFF3570007966A0 /* roomvu-challenge-taskUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -380,13 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9D7A21AC2AFF3570007966A0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D7A21B62AFF3570007966A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,14 +422,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D7A21B32AFF3570007966A0 /* roomvu_challenge_taskTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D7A21B42AFF3570007966A0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9D1C61412B0270D9007BB7C7 /* ForecastAPITests.swift in Sources */,
+				9D1C61432B0270F2007BB7C7 /* ForecastViewModelTests.swift in Sources */,
+				9D1C61492B027267007BB7C7 /* WeatherResponseTests.swift in Sources */,
+				9D1C614D2B0273F4007BB7C7 /* GeocodedLocationTests.swift in Sources */,
+				9D1C613D2B026F62007BB7C7 /* WeatherAPITests.swift in Sources */,
+				9D1C61472B0271D3007BB7C7 /* LocationViewModelTests.swift in Sources */,
+				9D1C61452B0271AC007BB7C7 /* GeocodingAPITests.swift in Sources */,
+				9D1C613F2B026FA3007BB7C7 /* WeatherViewModelTests.swift in Sources */,
+				9D1C614B2B027374007BB7C7 /* ForecastResponseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,11 +441,6 @@
 			isa = PBXTargetDependency;
 			target = 9D7A219C2AFF356E007966A0 /* roomvu-challenge-task */;
 			targetProxy = 9D7A21AF2AFF3570007966A0 /* PBXContainerItemProxy */;
-		};
-		9D7A21BA2AFF3570007966A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D7A219C2AFF356E007966A0 /* roomvu-challenge-task */;
-			targetProxy = 9D7A21B92AFF3570007966A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -711,48 +685,6 @@
 			};
 			name = Release;
 		};
-		9D7A21C92AFF3570007966A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mspanadgoo.roomvu-challenge-taskUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "roomvu-challenge-task";
-			};
-			name = Debug;
-		};
-		9D7A21CA2AFF3570007966A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mspanadgoo.roomvu-challenge-taskUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "roomvu-challenge-task";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -779,15 +711,6 @@
 			buildConfigurations = (
 				9D7A21C62AFF3570007966A0 /* Debug */,
 				9D7A21C72AFF3570007966A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9D7A21C82AFF3570007966A0 /* Build configuration list for PBXNativeTarget "roomvu-challenge-taskUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9D7A21C92AFF3570007966A0 /* Debug */,
-				9D7A21CA2AFF3570007966A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
