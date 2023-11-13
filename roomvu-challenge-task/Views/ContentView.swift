@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var weatherViewModel = WeatherViewModel()
     @StateObject private var forecastViewModel = ForecastViewModel()
-    @StateObject private var locationViewModel = LocationViewModel()
+//    @StateObject private var locationViewModel = LocationViewModel()
+    @StateObject private var citySearchViewModel = GeocodeCitySearchViewModel()
     
     @EnvironmentObject var searchHistory: SearchHistory
 
@@ -125,9 +126,9 @@ struct ContentView: View {
             
             isSearchFocused = true
         }
-        .onReceive(locationViewModel.$location) { location in
-            if let location = location {
-                fetchData(latitude: location.latitude, longitude: location.longitude)
+        .onReceive(citySearchViewModel.$city) { city in
+            if let city = city {
+                fetchData(latitude: city.coordinate.latitude, longitude: city.coordinate.longitude)
                 showHistory = false
                 showResult = true
             }
@@ -142,11 +143,11 @@ struct ContentView: View {
                 errorMessage = IdentifiableError(error)
             }
         }
-        .onReceive(locationViewModel.$error) { error in
-            if let error = error {
-                errorMessage = IdentifiableError(error)
-            }
-        }
+//        .onReceive(locationViewModel.$error) { error in
+//            if let error = error {
+//                errorMessage = IdentifiableError(error)
+//            }
+//        }
         .alert(item: $errorMessage) { error in
             Alert(title: Text("Error"), message: Text(error.localizedDescription), dismissButton: .default(Text("OK")))
         }
@@ -155,18 +156,28 @@ struct ContentView: View {
     }
     
     private func onSearchSubmit() {
-        fetchLocationData(searchQuery: searchQuery)
+//        fetchLocationData(searchQuery: searchQuery)
+        citySearchViewModel.cityName = searchQuery
+        
         if !searchHistory.items.contains(searchQuery) {
             searchHistory.items.append(searchQuery)
         }
     }
     
-    private func fetchLocationData(searchQuery: String) {
-        locationViewModel.fetchLocation(searchQuery: searchQuery)
-    }
+//    private func fetchLocationData(searchQuery: String) {
+//        locationViewModel.fetchLocation(searchQuery: searchQuery)
+
+//    }
     
     private func fetchData(latitude: Double, longitude: Double) {
         weatherViewModel.fetchWeatherData(latitude: latitude, longitude: longitude)
         forecastViewModel.fetchForecast(latitude: latitude, longitude: longitude)
     }
 }
+
+
+
+
+
+
+

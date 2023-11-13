@@ -20,6 +20,8 @@
 		9D1C61492B027267007BB7C7 /* WeatherResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61482B027267007BB7C7 /* WeatherResponseTests.swift */; };
 		9D1C614B2B027374007BB7C7 /* ForecastResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C614A2B027374007BB7C7 /* ForecastResponseTests.swift */; };
 		9D1C614D2B0273F4007BB7C7 /* GeocodedLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C614C2B0273F4007BB7C7 /* GeocodedLocationTests.swift */; };
+		9D1C61502B027E88007BB7C7 /* GeocodeCitySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C614F2B027E88007BB7C7 /* GeocodeCitySearchViewModel.swift */; };
+		9D1C61522B027EB6007BB7C7 /* GeocodeCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C61512B027EB6007BB7C7 /* GeocodeCity.swift */; };
 		9D7A21A12AFF356E007966A0 /* roomvu_challenge_taskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7A21A02AFF356E007966A0 /* roomvu_challenge_taskApp.swift */; };
 		9D7A21A52AFF356F007966A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7A21A42AFF356F007966A0 /* Assets.xcassets */; };
 		9D7A21A92AFF356F007966A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7A21A82AFF356F007966A0 /* Preview Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		9D1C614A2B027374007BB7C7 /* ForecastResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponseTests.swift; sourceTree = "<group>"; };
 		9D1C614C2B0273F4007BB7C7 /* GeocodedLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodedLocationTests.swift; sourceTree = "<group>"; };
 		9D1C614E2B027650007BB7C7 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		9D1C614F2B027E88007BB7C7 /* GeocodeCitySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeCitySearchViewModel.swift; sourceTree = "<group>"; };
+		9D1C61512B027EB6007BB7C7 /* GeocodeCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeCity.swift; sourceTree = "<group>"; };
 		9D7A219D2AFF356E007966A0 /* roomvu-challenge-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "roomvu-challenge-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7A21A02AFF356E007966A0 /* roomvu_challenge_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomvu_challenge_taskApp.swift; sourceTree = "<group>"; };
 		9D7A21A42AFF356F007966A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				9D7A22032AFF9CB6007966A0 /* WeatherDetail.swift */,
 				9D7A21E22AFF4C1C007966A0 /* WeatherResponse.swift */,
 				9D7A21E82AFF4C6D007966A0 /* Wind.swift */,
+				9D1C61512B027EB6007BB7C7 /* GeocodeCity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				9D7A21D92AFF3884007966A0 /* WeatherViewModel.swift */,
 				9D7A21E02AFF3AB3007966A0 /* ForecastViewModel.swift */,
 				9D7A21EE2AFF72E9007966A0 /* LocationViewModel.swift */,
+				9D1C614F2B027E88007BB7C7 /* GeocodeCitySearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 			files = (
 				9D7A21DF2AFF3993007966A0 /* ForecastRow.swift in Sources */,
 				9D7A21E72AFF4C60007966A0 /* WeatherData.swift in Sources */,
+				9D1C61522B027EB6007BB7C7 /* GeocodeCity.swift in Sources */,
 				9D7A21FA2AFF7BF4007966A0 /* ContentView.swift in Sources */,
 				9D7A21CF2AFF376C007966A0 /* Forecast.swift in Sources */,
 				9D7A21F32AFF73A3007966A0 /* GeocodedLocation.swift in Sources */,
@@ -394,6 +401,7 @@
 				9D7A22142B023320007966A0 /* DayCardView.swift in Sources */,
 				9D7A21D22AFF37C8007966A0 /* WeatherAPI.swift in Sources */,
 				9D7A22042AFF9CB6007966A0 /* WeatherDetail.swift in Sources */,
+				9D1C61502B027E88007BB7C7 /* GeocodeCitySearchViewModel.swift in Sources */,
 				9D7A21E12AFF3AB3007966A0 /* ForecastViewModel.swift in Sources */,
 				9D7A21E32AFF4C1C007966A0 /* WeatherResponse.swift in Sources */,
 				9D7A22162B024285007966A0 /* SearchHistory.swift in Sources */,
