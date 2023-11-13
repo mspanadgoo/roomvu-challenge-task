@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct roomvu_challenge_taskApp: App {
+    var searchHistory = SearchHistory()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(searchHistory)
         }
     }
 }

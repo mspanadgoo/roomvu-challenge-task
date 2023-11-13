@@ -32,8 +32,6 @@ class WeatherAPIImp: WeatherAPIServices {
         
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { data, _ in
-                print("weather: ")
-                print(String(data: data, encoding: .utf8) ?? "bbbb")
                 let decoder = JSONDecoder()
                 let weatherResponse = try decoder.decode(WeatherResponse.self, from: data)
 

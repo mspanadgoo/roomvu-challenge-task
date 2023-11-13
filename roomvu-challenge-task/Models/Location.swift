@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Location {
+struct Location: Equatable {
     let name: String
     let latitude: Double
     let longitude: Double
@@ -20,5 +20,9 @@ struct Location {
         self.longitude = geocodedLocation.lon
         self.country = geocodedLocation.country
         self.state = geocodedLocation.state
+    }
+    
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
     }
 }

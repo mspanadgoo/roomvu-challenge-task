@@ -26,9 +26,7 @@ struct WeatherView: View {
             temperatureRow
             descriptionRow
             detailsRow
-            Spacer()
         }
-        .padding()
     }
     
     private var locationRow: some View {
@@ -110,7 +108,7 @@ struct WeatherView: View {
             VStack(alignment: .leading) {
                 Text("Humidity")
                     .font(.system(size: 15))
-                Text(String(format: "%.1f", weather.humidity ?? 0) + "%")
+                Text("\(weather.humidity ?? 0)%")
                     .font(.system(size: 15))
                     .bold()
             }
@@ -134,8 +132,4 @@ struct WeatherView: View {
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -1,5 +1,5 @@
 //
-//  NextFiveDayView.swift
+//  Next5DaysView.swift
 //  roomvu-challenge-task
 //
 //  Created by Mohammad Sadegh Panadgoo on 8/22/1402 AP.
@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-import SwiftUI
-
-struct NextFiveDayView: View {
+struct Next5DaysView: View {
     @Binding var weather: Weather?
     @Binding var forecasts: [Forecast]
     
     private let baseImageURL: String = "https://openweathermap.org/img/wn/#ICON_CODE#.png"
-    
+
     // Function to filter forecasts
     func filterForecasts() -> [Forecast] {
         var uniqueDays: [Forecast] = []
@@ -43,7 +41,6 @@ struct NextFiveDayView: View {
             Text("Next 5 Days")
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
             
             VStack {
                 VStack {
@@ -88,29 +85,7 @@ struct NextFiveDayView: View {
                 .background(Color.white)
                 .cornerRadius(12)
                 .shadow(radius: 3)
-                
-                Spacer()
-                
-                Text("Today Details")
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                VStack {
-                    HStack {
-                        TodayDetailCardView(title: "Humidity", imageString: "humidity", value: "\(weather!.humidity!)%")
-                        TodayDetailCardView(title: "Wind", imageString: "wind", value: "\(weather!.windSpeed!) km/h")
-                    }
-                    
-                    HStack {
-                        TodayDetailCardView(title: "Feels Like", imageString: "drop.degreesign", value: "\(weather!.feelsLike!) °C")
-                        TodayDetailCardView(title: "Pressure", imageString: "arrow.down.circle.fill", value: "\(weather!.pressure!) hPa")
-                    }
-                }
-            
-                Spacer()
-                
             }
-            .padding()
         }
     }
 }

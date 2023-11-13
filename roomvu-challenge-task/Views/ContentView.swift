@@ -12,13 +12,16 @@ struct ContentView: View {
     @StateObject private var forecastViewModel = ForecastViewModel()
     @StateObject private var locationViewModel = LocationViewModel()
     
+    @EnvironmentObject var searchHistory: SearchHistory
+
     @State private var searchQuery: String = ""
     @State private var latitude: Double = 0.0
     @State private var longitude: Double = 0.0
-    @State private var searchHistory: [String] = UserDefaults.standard.array(forKey: "SearchHistory") as? [String] ?? []
+    @State private var showResult: Bool = false
     @State private var showHistory: Bool = false
     @State private var manageHistory: Bool = false
-    
+    @State private var errorMessage: IdentifiableError?
+
     @FocusState private var isSearchFocused: Bool
     
     var body: some View {
@@ -31,7 +34,7 @@ struct ContentView: View {
                     .padding()
                     .submitLabel(.search)
                     .onChange(of: searchQuery) {
-                        showHistory = !searchQuery.isEmpty
+                        showHistory = !searchHistory.items.isEmpty
                     }
                     .onSubmit {
                         onSearchSubmit()
@@ -43,9 +46,6 @@ struct ContentView: View {
             .cornerRadius(12)
             .shadow(radius: 3)
             .padding(.horizontal)
-            
-            
-            Spacer()
             
             if showHistory {
                 List {
@@ -74,13 +74,12 @@ struct ContentView: View {
                         }
                     }
                     
-                    ForEach(searchHistory, id: \.self) { item in
+                    ForEach(searchHistory.items, id: \.self) { item in
                         HStack {
                             if manageHistory {
                                 Button(action: {
-                                    if let index = searchHistory.firstIndex(of: item) {
-                                        searchHistory.remove(at: index)
-                                        UserDefaults.standard.set(searchHistory, forKey: "SearchHistory")
+                                    if let index = searchHistory.items.firstIndex(of: item) {
+                                        searchHistory.items.remove(at: index)
                                     }
                                 }) {
                                     Image(systemName: "trash")
@@ -92,8 +91,10 @@ struct ContentView: View {
                             }
                             
                             Button(action: {
-                                self.searchQuery = item
-                                onSearchSubmit()
+                                if !manageHistory {
+                                    self.searchQuery = item
+                                    onSearchSubmit()
+                                }
                             }) {
                                 Text(item)
                                     .font(.system(size: 15,weight: .semibold))
@@ -107,40 +108,65 @@ struct ContentView: View {
                     }
                 }
                 .listStyle(.plain)
-            } else if let location = locationViewModel.location {
-                PageView(views: [AnyView(TodayView(weather: $weatherViewModel.weather, forecasts: $forecastViewModel.forecasts)),
-                                 AnyView(NextFiveDayView(weather: $weatherViewModel.weather, forecasts: $forecastViewModel.forecasts))])
-                
-                .onAppear {
-                    fetchWeatherData(latitude: location.latitude, longitude: location.longitude)
-                    fetchForecastData(latitude: location.latitude, longitude: location.longitude)
-                }
+            } else if showResult {
+                    PageView(views: [AnyView(TodayView(weather: $weatherViewModel.weather, forecasts: $forecastViewModel.forecasts)),
+                                     AnyView(SecondPageView(weather: $weatherViewModel.weather, forecasts: $forecastViewModel.forecasts))])
+            } else {
+                Text("Search a location to get weather information.")
+                    .foregroundStyle(.gray)
+                    .bold()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
+        }
+        .onAppear {
+            if !searchHistory.items.isEmpty {
+                showHistory = true
+            }
+            
+            isSearchFocused = true
+        }
+        .onReceive(locationViewModel.$location) { location in
+            if let location = location {
+                fetchData(latitude: location.latitude, longitude: location.longitude)
+                showHistory = false
+                showResult = true
+            }
+        }
+        .onReceive(weatherViewModel.$error) { error in
+            if let error = error {
+                errorMessage = IdentifiableError(error)
+            }
+        }
+        .onReceive(forecastViewModel.$error) { error in
+            if let error = error {
+                errorMessage = IdentifiableError(error)
+            }
+        }
+        .onReceive(locationViewModel.$error) { error in
+            if let error = error {
+                errorMessage = IdentifiableError(error)
+            }
+        }
+        .alert(item: $errorMessage) { error in
+            Alert(title: Text("Error"), message: Text(error.localizedDescription), dismissButton: .default(Text("OK")))
         }
         
         Spacer()
     }
     
     private func onSearchSubmit() {
-        self.showHistory = false
-        
         fetchLocationData(searchQuery: searchQuery)
-        if !searchHistory.contains(searchQuery) {
-            searchHistory.append(searchQuery)
-            UserDefaults.standard.set(searchHistory, forKey: "SearchHistory")
+        if !searchHistory.items.contains(searchQuery) {
+            searchHistory.items.append(searchQuery)
         }
-        showHistory = false
     }
     
     private func fetchLocationData(searchQuery: String) {
         locationViewModel.fetchLocation(searchQuery: searchQuery)
     }
     
-    private func fetchWeatherData(latitude: Double, longitude: Double) {
+    private func fetchData(latitude: Double, longitude: Double) {
         weatherViewModel.fetchWeatherData(latitude: latitude, longitude: longitude)
-    }
-    
-    private func fetchForecastData(latitude: Double, longitude: Double) {
         forecastViewModel.fetchForecast(latitude: latitude, longitude: longitude)
     }
 }

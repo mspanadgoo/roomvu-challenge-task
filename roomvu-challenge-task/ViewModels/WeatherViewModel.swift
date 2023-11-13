@@ -10,8 +10,8 @@ import Combine
 
 class WeatherViewModel: ObservableObject {
     @Published var weather: Weather?
-    @Published var error: Error?
-    
+    @Published var error: IdentifiableError?
+
     private let weatherAPI: WeatherAPIServices
     private var cancellables = Set<AnyCancellable>()
     
@@ -25,7 +25,10 @@ class WeatherViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .failure(let error):
-                    self.error = error
+                    self.error = IdentifiableError(error)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.error = nil
+                    }
                 case .finished:
                     break
                 }

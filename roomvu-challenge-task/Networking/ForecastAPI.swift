@@ -25,8 +25,6 @@ class ForecastAPIImp: ForecastAPIServices {
     func fetchForecastData(longitude: Double, latitude: Double) -> AnyPublisher<[Forecast], ForecastAPIServicesError> {
         let urlString = "\(baseURL)/\(forecastEndpoint)?lat=\(latitude)&lon=\(longitude)&units=\(units)&appid=\(apiKey)"
         
-        print("Forecast url: \(urlString)")
-        
         guard let url = URL(string: urlString) else {
             return Fail(error: ForecastAPIServicesError.generalError)
                 .eraseToAnyPublisher()
@@ -34,8 +32,6 @@ class ForecastAPIImp: ForecastAPIServices {
         
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { data, _ in
-                print("Forecast Data: ")
-                print(String(data: data, encoding: .utf8) ?? "")
                 let decoder = JSONDecoder()
                 let forecastResponse = try decoder.decode(ForecastResponse.self, from: data)
 

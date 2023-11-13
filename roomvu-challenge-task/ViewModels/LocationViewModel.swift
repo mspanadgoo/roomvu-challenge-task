@@ -10,8 +10,8 @@ import Combine
 
 class LocationViewModel: ObservableObject {
     @Published var location: Location?
-    @Published var error: Error?
-    
+    @Published var error: IdentifiableError?
+
     private let geocodingAPI: GeocodingAPIServices
     private var cancellables = Set<AnyCancellable>()
     
@@ -25,7 +25,10 @@ class LocationViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .failure(let error):
-                    self.error = error
+                    self.error = IdentifiableError(error)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.error = nil
+                    }
                 case .finished:
                     break
                 }
