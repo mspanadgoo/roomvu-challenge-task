@@ -82,6 +82,7 @@
 		9D1C61482B027267007BB7C7 /* WeatherResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseTests.swift; sourceTree = "<group>"; };
 		9D1C614A2B027374007BB7C7 /* ForecastResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponseTests.swift; sourceTree = "<group>"; };
 		9D1C614C2B0273F4007BB7C7 /* GeocodedLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodedLocationTests.swift; sourceTree = "<group>"; };
+		9D1C614E2B027650007BB7C7 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		9D7A219D2AFF356E007966A0 /* roomvu-challenge-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "roomvu-challenge-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7A21A02AFF356E007966A0 /* roomvu_challenge_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomvu_challenge_taskApp.swift; sourceTree = "<group>"; };
 		9D7A21A42AFF356F007966A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		9D7A21942AFF356D007966A0 = {
 			isa = PBXGroup;
 			children = (
+				9D1C614E2B027650007BB7C7 /* ReadMe.md */,
 				9D7A219F2AFF356E007966A0 /* roomvu-challenge-task */,
 				9D7A21B12AFF3570007966A0 /* roomvu-challenge-taskTests */,
 				9D7A219E2AFF356E007966A0 /* Products */,
