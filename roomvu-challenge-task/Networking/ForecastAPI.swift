@@ -39,9 +39,12 @@ class ForecastAPIImp: ForecastAPIServices {
                 let decoder = JSONDecoder()
                 let forecastResponse = try decoder.decode(ForecastResponse.self, from: data)
 
-                return forecastResponse.list ?? []
+                return forecastResponse.list
             }
-            .mapError { _ in ForecastAPIServicesError.generalError }
+            .mapError { error in
+                print("Weather API Error: \(error)")
+                return ForecastAPIServicesError.generalError
+            }
             .eraseToAnyPublisher()
     }
 }

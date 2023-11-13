@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct ContentView: View {
     @StateObject private var weatherViewModel = WeatherViewModel()
@@ -26,6 +25,7 @@ struct ContentView: View {
         VStack {
             HStack {
                 Image(systemName: "magnifyingglass")
+                    .foregroundStyle(Color.accentColor)
                 TextField("Search Location", text: $searchQuery)
                     .frame(height: 15)
                     .padding()
@@ -39,13 +39,11 @@ struct ContentView: View {
                     .focused($isSearchFocused)
             }
             .padding(.horizontal)
-            .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
-            .shadow(color: .gray, radius: 15, x: 0, y: 0) // Add shadow here
+            .background(Color.white)
+            .cornerRadius(12)
+            .shadow(radius: 3)
             .padding(.horizontal)
-
+            
             
             Spacer()
             
@@ -109,31 +107,18 @@ struct ContentView: View {
                     }
                 }
                 .listStyle(.plain)
-            } else if let location = locationViewModel.location,
-               let latitude = location.latitude,
-               let longitude = location.longitude {
-                   
-                VStack {
-
-                    
-                    if let weather = weatherViewModel.weather {
-                        WeatherView(weather: weather)
-                    }
-                    
-                    if !forecastViewModel.Forecast.isEmpty {
-//                        VStack {
-//                            ForEach(forecastViewModel.Forecast) { forecast in
-//                                ForecastRow(forecast: forecast)
-//                            }
-//                        }
-                    }
-                }
+            } else if let location = locationViewModel.location {
+                PageView(views: [AnyView(TodayView(weather: $weatherViewModel.weather, forecasts: $forecastViewModel.forecasts)),
+                                 AnyView(NextFiveDayView(weather: $weatherViewModel.weather, forecasts: $forecastViewModel.forecasts))])
+                
                 .onAppear {
-                    fetchWeatherData(latitude: latitude, longitude: longitude)
-                    fetchForecastData(latitude: latitude, longitude: longitude)
+                    fetchWeatherData(latitude: location.latitude, longitude: location.longitude)
+                    fetchForecastData(latitude: location.latitude, longitude: location.longitude)
                 }
             }
         }
+        
+        Spacer()
     }
     
     private func onSearchSubmit() {
@@ -158,8 +143,4 @@ struct ContentView: View {
     private func fetchForecastData(latitude: Double, longitude: Double) {
         forecastViewModel.fetchForecast(latitude: latitude, longitude: longitude)
     }
-}
-
-#Preview {
-    ContentView()
 }

@@ -9,8 +9,8 @@ import Foundation
 
 struct City: Codable {
     let id: Int?
-    let name: String?
-    let coord: Coord?
+    let name: String
+    let coord: Coord
     let country: String?
-    let population, timezone, sunrise, sunset: Int?
+    let population, timezone, sunrise, sunset: Int
 }

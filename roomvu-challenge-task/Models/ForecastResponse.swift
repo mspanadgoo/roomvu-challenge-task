@@ -8,8 +8,8 @@
 import Foundation
 
 struct ForecastResponse: Codable {
-    let cod: String?
-    let message, cnt: Int?
-    let list: [Forecast]?
-    let city: City?
+    let cod: String
+    let message, cnt: Int
+    let list: [Forecast]
+    let city: City
 }

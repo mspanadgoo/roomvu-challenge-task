@@ -8,8 +8,9 @@
 import Foundation
 
 struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double?
-    let pressure, seaLevel, grndLevel, humidity: Int?
+    let temp, feelsLike, tempMin, tempMax: Double
+    let pressure, humidity: Int
+    let seaLevel, grndLevel: Int?
     let tempKf: Double?
 
     enum CodingKeys: String, CodingKey {

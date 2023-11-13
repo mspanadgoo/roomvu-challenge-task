@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class ForecastViewModel: ObservableObject {
-    @Published var Forecast: [Forecast] = []
+    @Published var forecasts: [Forecast] = []
     @Published var error: Error?
     
     private let ForecastAPI: ForecastAPIServices
@@ -29,8 +29,9 @@ class ForecastViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { Forecast in
-                self.Forecast = Forecast
+            } receiveValue: { forecasts in
+                // Sort the forecast array in ascending order of the dt property
+                self.forecasts = forecasts.sorted(by: { $0.dt < $1.dt })
             }
             .store(in: &cancellables)
     }

@@ -8,16 +8,16 @@
 import Foundation
 
 struct Forecast: Codable {
-    let dt: TimeInterval?
-    let main: Main?
-    let weather: [Weather]?
-    let clouds: Clouds?
-    let wind: Wind?
-    let visibility: Int?
-    let pop: Double?
+    let dt: TimeInterval
+    let main: Main
+    let weather: [Weather]
+    let clouds: Clouds
+    let wind: Wind
+    let visibility: Int
+    let pop: Double
     let rain: Rain?
-    let sys: Sys?
-    let dtTxt: String?
+    let sys: Sys
+    let dtTxt: String
 
     enum CodingKeys: String, CodingKey {
         case dt, main, weather, clouds, wind, visibility, pop, rain, sys

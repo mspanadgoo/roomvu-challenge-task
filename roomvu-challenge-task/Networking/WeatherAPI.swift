@@ -37,7 +37,7 @@ class WeatherAPIImp: WeatherAPIServices {
                 let decoder = JSONDecoder()
                 let weatherResponse = try decoder.decode(WeatherResponse.self, from: data)
 
-                guard let weatherDetail = weatherResponse.weather?.first else {
+                guard let weatherDetail = weatherResponse.weather.first else {
                     throw WeatherAPIServicesError.generalError
                 }
                 
@@ -46,13 +46,15 @@ class WeatherAPIImp: WeatherAPIServices {
                     main: weatherDetail.main,
                     description: weatherDetail.main,
                     icon: weatherDetail.icon,
-                    temperature: weatherResponse.main?.temp,
-                    humidity: weatherResponse.main?.humidity,
-                    windSpeed: weatherResponse.wind?.speed,
+                    temperature: weatherResponse.main.temp,
+                    humidity: weatherResponse.main.humidity,
+                    windSpeed: weatherResponse.wind.speed,
                     location: weatherResponse.name,
-                    minTemp: weatherResponse.main?.tempMin,
-                    maxTemp: weatherResponse.main?.tempMax,
-                    feelsLike: weatherResponse.main?.feelsLike
+                    minTemp: weatherResponse.main.tempMin,
+                    maxTemp: weatherResponse.main.tempMax,
+                    feelsLike: weatherResponse.main.feelsLike,
+                    dateTime: weatherResponse.dt,
+                    pressure: weatherResponse.main.pressure
                 )
                 return weather
             }

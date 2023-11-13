@@ -9,9 +9,9 @@ import Foundation
 
 struct Weather: Codable {
     let id: Int?
-    let main: String?
-    let description: String?
-    let icon: String?
+    let main: String
+    let description: String
+    let icon: String
     let temperature: Double?
     let humidity: Int?
     let windSpeed: Double?
@@ -19,4 +19,6 @@ struct Weather: Codable {
     let minTemp: Double?
     let maxTemp: Double?
     let feelsLike: Double?
+    let dateTime: TimeInterval?
+    let pressure: Int?
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct ForecastData: Codable {
-    let dtTxt: String?
-    let weather: [WeatherData]?
-    let main: Main?
+    let dtTxt: String
+    let weather: [WeatherData]
+    let main: Main
 }
