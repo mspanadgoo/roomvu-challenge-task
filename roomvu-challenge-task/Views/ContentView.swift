@@ -162,6 +162,8 @@ struct ContentView: View {
         if !searchHistory.items.contains(searchQuery) {
             searchHistory.items.append(searchQuery)
         }
+        
+        isSearchFocused = false
     }
     
 //    private func fetchLocationData(searchQuery: String) {
